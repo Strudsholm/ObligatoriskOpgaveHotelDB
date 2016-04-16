@@ -10,6 +10,7 @@ namespace WebService
         public DBContext()
             : base("name=DBContext")
         {
+            base.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Booking> Booking { get; set; }

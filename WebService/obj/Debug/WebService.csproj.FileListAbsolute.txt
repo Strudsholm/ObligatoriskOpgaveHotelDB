@@ -85,6 +85,6 @@ C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\WebService\
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\WebService\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\WebService\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\WebService\bin\System.Web.Http.Owin.xml
-C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\WebService\obj\Debug\WebService.csprojResolveAssemblyReference.cache
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\WebService\obj\Debug\WebService.dll
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\WebService\obj\Debug\WebService.pdb
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\WebService\obj\Debug\WebService.csprojResolveAssemblyReference.cache
