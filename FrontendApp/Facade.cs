@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using FrontendApp.Model;
 using Newtonsoft.Json;
 
 
@@ -19,18 +20,22 @@ namespace FrontendApp
         public Facade()
         {
             handler = new HttpClientHandler();
-            serverUrl = "http://localhost:5922/";
+            serverUrl = "http://localhost:24061/";
             handler.UseDefaultCredentials = true;
+            
         }
 
         //Http Get
+        //Sætter min singleton = gæste listen via webservice
         public void GetMetode()
         {
             using (var client = new HttpClient(handler))
             {
                 client.BaseAddress = new Uri(serverUrl);
-    client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("applicatione/json"));
+
+                var listofguests = new List<Guest>();
 
                 try
                 {
@@ -40,18 +45,23 @@ namespace FrontendApp
 
                         var GuestJson = responce.Content.ReadAsStringAsync().Result;
 
-    var listofguests = JsonConvert.DeserializeObject<List<Guest>>(GuestJson);
+                        listofguests = JsonConvert.DeserializeObject<List<Guest>>(GuestJson);
+                        GuestListSingleton.Instance.Guests = listofguests;
+
+
                     }
+
                 }
                 catch (Exception)
                 {
 
-                    
+
                 }
+               
             }
         }
-        
 
-       
+
+
     }
 }

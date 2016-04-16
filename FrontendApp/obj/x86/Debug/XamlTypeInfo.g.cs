@@ -132,15 +132,41 @@ namespace FrontendApp.FrontendApp_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[3];
+            _typeNameTable = new string[16];
             _typeNameTable[0] = "FrontendApp.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[3] = "FrontendApp.ViewModel.GæstVM";
+            _typeNameTable[4] = "Object";
+            _typeNameTable[5] = "System.Collections.ObjectModel.ObservableCollection`1<FrontendApp.Guest>";
+            _typeNameTable[6] = "System.Collections.ObjectModel.Collection`1<FrontendApp.Guest>";
+            _typeNameTable[7] = "FrontendApp.Guest";
+            _typeNameTable[8] = "Int32";
+            _typeNameTable[9] = "String";
+            _typeNameTable[10] = "System.Collections.Generic.ICollection`1<FrontendApp.Booking>";
+            _typeNameTable[11] = "FrontendApp.Booking";
+            _typeNameTable[12] = "System.DateTime";
+            _typeNameTable[13] = "System.ValueType";
+            _typeNameTable[14] = "FrontendApp.Room";
+            _typeNameTable[15] = "FrontendApp.RedigerGuestUI";
 
-            _typeTable = new global::System.Type[3];
+            _typeTable = new global::System.Type[16];
             _typeTable[0] = typeof(global::FrontendApp.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[3] = typeof(global::FrontendApp.ViewModel.GæstVM);
+            _typeTable[4] = typeof(global::System.Object);
+            _typeTable[5] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::FrontendApp.Guest>);
+            _typeTable[6] = typeof(global::System.Collections.ObjectModel.Collection<global::FrontendApp.Guest>);
+            _typeTable[7] = typeof(global::FrontendApp.Guest);
+            _typeTable[8] = typeof(global::System.Int32);
+            _typeTable[9] = typeof(global::System.String);
+            _typeTable[10] = typeof(global::System.Collections.Generic.ICollection<global::FrontendApp.Booking>);
+            _typeTable[11] = typeof(global::FrontendApp.Booking);
+            _typeTable[12] = typeof(global::System.DateTime);
+            _typeTable[13] = typeof(global::System.ValueType);
+            _typeTable[14] = typeof(global::FrontendApp.Room);
+            _typeTable[15] = typeof(global::FrontendApp.RedigerGuestUI);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -176,6 +202,31 @@ namespace FrontendApp.FrontendApp_XamlTypeInfo
         }
 
         private object Activate_0_MainPage() { return new global::FrontendApp.MainPage(); }
+        private object Activate_3_GæstVM() { return new global::FrontendApp.ViewModel.GæstVM(); }
+        private object Activate_5_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::FrontendApp.Guest>(); }
+        private object Activate_6_Collection() { return new global::System.Collections.ObjectModel.Collection<global::FrontendApp.Guest>(); }
+        private object Activate_7_Guest() { return new global::FrontendApp.Guest(); }
+        private object Activate_11_Booking() { return new global::FrontendApp.Booking(); }
+        private object Activate_14_Room() { return new global::FrontendApp.Room(); }
+        private object Activate_15_RedigerGuestUI() { return new global::FrontendApp.RedigerGuestUI(); }
+        private void VectorAdd_5_ObservableCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::FrontendApp.Guest>)instance;
+            var newItem = (global::FrontendApp.Guest)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_6_Collection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::FrontendApp.Guest>)instance;
+            var newItem = (global::FrontendApp.Guest)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_10_ICollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::FrontendApp.Booking>)instance;
+            var newItem = (global::FrontendApp.Booking)item;
+            collection.Add(newItem);
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -201,16 +252,320 @@ namespace FrontendApp.FrontendApp_XamlTypeInfo
             case 2:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
+
+            case 3:   //  FrontendApp.ViewModel.GæstVM
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_3_GæstVM;
+                userType.AddMemberName("GuestsOC");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  Object
+                xamlType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 5:   //  System.Collections.ObjectModel.ObservableCollection`1<FrontendApp.Guest>
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<FrontendApp.Guest>"));
+                userType.CollectionAdd = VectorAdd_5_ObservableCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 6:   //  System.Collections.ObjectModel.Collection`1<FrontendApp.Guest>
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_6_Collection;
+                userType.CollectionAdd = VectorAdd_6_Collection;
+                xamlType = userType;
+                break;
+
+            case 7:   //  FrontendApp.Guest
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_7_Guest;
+                userType.AddMemberName("Guest_No");
+                userType.AddMemberName("Name");
+                userType.AddMemberName("Address");
+                userType.AddMemberName("Booking");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 8:   //  Int32
+                xamlType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 9:   //  String
+                xamlType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 10:   //  System.Collections.Generic.ICollection`1<FrontendApp.Booking>
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType.CollectionAdd = VectorAdd_10_ICollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 11:   //  FrontendApp.Booking
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_11_Booking;
+                userType.AddMemberName("Booking_id");
+                userType.AddMemberName("Hotel_No");
+                userType.AddMemberName("Guest_No");
+                userType.AddMemberName("Date_From");
+                userType.AddMemberName("Date_To");
+                userType.AddMemberName("Room_No");
+                userType.AddMemberName("Room");
+                userType.AddMemberName("Guest");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 12:   //  System.DateTime
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 13:   //  System.ValueType
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                xamlType = userType;
+                break;
+
+            case 14:   //  FrontendApp.Room
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 15:   //  FrontendApp.RedigerGuestUI
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_15_RedigerGuestUI;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
             }
             return xamlType;
         }
 
 
+        private object get_0_GæstVM_GuestsOC(object instance)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            return that.GuestsOC;
+        }
+        private void set_0_GæstVM_GuestsOC(object instance, object Value)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            that.GuestsOC = (global::System.Collections.ObjectModel.ObservableCollection<global::FrontendApp.Guest>)Value;
+        }
+        private object get_1_Guest_Guest_No(object instance)
+        {
+            var that = (global::FrontendApp.Guest)instance;
+            return that.Guest_No;
+        }
+        private void set_1_Guest_Guest_No(object instance, object Value)
+        {
+            var that = (global::FrontendApp.Guest)instance;
+            that.Guest_No = (global::System.Int32)Value;
+        }
+        private object get_2_Guest_Name(object instance)
+        {
+            var that = (global::FrontendApp.Guest)instance;
+            return that.Name;
+        }
+        private void set_2_Guest_Name(object instance, object Value)
+        {
+            var that = (global::FrontendApp.Guest)instance;
+            that.Name = (global::System.String)Value;
+        }
+        private object get_3_Guest_Address(object instance)
+        {
+            var that = (global::FrontendApp.Guest)instance;
+            return that.Address;
+        }
+        private void set_3_Guest_Address(object instance, object Value)
+        {
+            var that = (global::FrontendApp.Guest)instance;
+            that.Address = (global::System.String)Value;
+        }
+        private object get_4_Guest_Booking(object instance)
+        {
+            var that = (global::FrontendApp.Guest)instance;
+            return that.Booking;
+        }
+        private void set_4_Guest_Booking(object instance, object Value)
+        {
+            var that = (global::FrontendApp.Guest)instance;
+            that.Booking = (global::System.Collections.Generic.ICollection<global::FrontendApp.Booking>)Value;
+        }
+        private object get_5_Booking_Booking_id(object instance)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            return that.Booking_id;
+        }
+        private void set_5_Booking_Booking_id(object instance, object Value)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            that.Booking_id = (global::System.Int32)Value;
+        }
+        private object get_6_Booking_Hotel_No(object instance)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            return that.Hotel_No;
+        }
+        private void set_6_Booking_Hotel_No(object instance, object Value)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            that.Hotel_No = (global::System.Int32)Value;
+        }
+        private object get_7_Booking_Guest_No(object instance)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            return that.Guest_No;
+        }
+        private void set_7_Booking_Guest_No(object instance, object Value)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            that.Guest_No = (global::System.Int32)Value;
+        }
+        private object get_8_Booking_Date_From(object instance)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            return that.Date_From;
+        }
+        private void set_8_Booking_Date_From(object instance, object Value)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            that.Date_From = (global::System.DateTime)Value;
+        }
+        private object get_9_Booking_Date_To(object instance)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            return that.Date_To;
+        }
+        private void set_9_Booking_Date_To(object instance, object Value)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            that.Date_To = (global::System.DateTime)Value;
+        }
+        private object get_10_Booking_Room_No(object instance)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            return that.Room_No;
+        }
+        private void set_10_Booking_Room_No(object instance, object Value)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            that.Room_No = (global::System.Int32)Value;
+        }
+        private object get_11_Booking_Room(object instance)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            return that.Room;
+        }
+        private void set_11_Booking_Room(object instance, object Value)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            that.Room = (global::FrontendApp.Room)Value;
+        }
+        private object get_12_Booking_Guest(object instance)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            return that.Guest;
+        }
+        private void set_12_Booking_Guest(object instance, object Value)
+        {
+            var that = (global::FrontendApp.Booking)instance;
+            that.Guest = (global::FrontendApp.Guest)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "FrontendApp.ViewModel.GæstVM.GuestsOC":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.ViewModel.GæstVM");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "GuestsOC", "System.Collections.ObjectModel.ObservableCollection`1<FrontendApp.Guest>");
+                xamlMember.Getter = get_0_GæstVM_GuestsOC;
+                xamlMember.Setter = set_0_GæstVM_GuestsOC;
+                break;
+            case "FrontendApp.Guest.Guest_No":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.Guest");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Guest_No", "Int32");
+                xamlMember.Getter = get_1_Guest_Guest_No;
+                xamlMember.Setter = set_1_Guest_Guest_No;
+                break;
+            case "FrontendApp.Guest.Name":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.Guest");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Name", "String");
+                xamlMember.Getter = get_2_Guest_Name;
+                xamlMember.Setter = set_2_Guest_Name;
+                break;
+            case "FrontendApp.Guest.Address":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.Guest");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Address", "String");
+                xamlMember.Getter = get_3_Guest_Address;
+                xamlMember.Setter = set_3_Guest_Address;
+                break;
+            case "FrontendApp.Guest.Booking":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.Guest");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Booking", "System.Collections.Generic.ICollection`1<FrontendApp.Booking>");
+                xamlMember.Getter = get_4_Guest_Booking;
+                xamlMember.Setter = set_4_Guest_Booking;
+                break;
+            case "FrontendApp.Booking.Booking_id":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.Booking");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Booking_id", "Int32");
+                xamlMember.Getter = get_5_Booking_Booking_id;
+                xamlMember.Setter = set_5_Booking_Booking_id;
+                break;
+            case "FrontendApp.Booking.Hotel_No":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.Booking");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Hotel_No", "Int32");
+                xamlMember.Getter = get_6_Booking_Hotel_No;
+                xamlMember.Setter = set_6_Booking_Hotel_No;
+                break;
+            case "FrontendApp.Booking.Guest_No":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.Booking");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Guest_No", "Int32");
+                xamlMember.Getter = get_7_Booking_Guest_No;
+                xamlMember.Setter = set_7_Booking_Guest_No;
+                break;
+            case "FrontendApp.Booking.Date_From":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.Booking");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Date_From", "System.DateTime");
+                xamlMember.Getter = get_8_Booking_Date_From;
+                xamlMember.Setter = set_8_Booking_Date_From;
+                break;
+            case "FrontendApp.Booking.Date_To":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.Booking");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Date_To", "System.DateTime");
+                xamlMember.Getter = get_9_Booking_Date_To;
+                xamlMember.Setter = set_9_Booking_Date_To;
+                break;
+            case "FrontendApp.Booking.Room_No":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.Booking");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Room_No", "Int32");
+                xamlMember.Getter = get_10_Booking_Room_No;
+                xamlMember.Setter = set_10_Booking_Room_No;
+                break;
+            case "FrontendApp.Booking.Room":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.Booking");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Room", "FrontendApp.Room");
+                xamlMember.Getter = get_11_Booking_Room;
+                xamlMember.Setter = set_11_Booking_Room;
+                break;
+            case "FrontendApp.Booking.Guest":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.Booking");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Guest", "FrontendApp.Guest");
+                xamlMember.Getter = get_12_Booking_Guest;
+                xamlMember.Setter = set_12_Booking_Guest;
+                break;
+            }
             return xamlMember;
         }
     }

@@ -100,10 +100,15 @@
     <Compile Include="Facade.cs" />
     <Compile Include="Guest.cs" />
     <Compile Include="Hotel.cs" />
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="Model\GuestListSingleton.cs" />
+    <Compile Include="ViewModel\GæstVM.cs" />
+    <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\RedigerGuestUI.xaml.cs">
+      <DependentUpon>RedigerGuestUI.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Room.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -127,11 +132,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
+    <Page Include="View\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\RedigerGuestUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
