@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using Newtonsoft.Json;
 using WebService;
 
 namespace WebService.Controllers
@@ -72,14 +73,15 @@ namespace WebService.Controllers
 
         // POST: api/Guests
         [ResponseType(typeof(Guest))]
-        public IHttpActionResult PostGuest(Guest guest)
+        public IHttpActionResult PostGuest(String guest)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Guest.Add(guest);
+            Guest guestd = JsonConvert.DeserializeObject<Guest>(guest);
+            db.Guest.Add(guestd);
 
             try
             {
@@ -87,7 +89,7 @@ namespace WebService.Controllers
             }
             catch (DbUpdateException)
             {
-                if (GuestExists(guest.Guest_No))
+                if (GuestExists(guestd.Guest_No))
                 {
                     return Conflict();
                 }
@@ -97,7 +99,7 @@ namespace WebService.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = guest.Guest_No }, guest);
+            return CreatedAtRoute("DefaultApi", new { id = guestd.Guest_No }, guestd);
         }
 
         // DELETE: api/Guests/5
