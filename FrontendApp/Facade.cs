@@ -25,8 +25,9 @@ namespace FrontendApp
             handler = new HttpClientHandler();
             serverUrl = "http://localhost:24061/";
             handler.UseDefaultCredentials = true;
-            CreateGuest(new Guest() {Address = "asd", Guest_No = 123, Name = "asd"});
+            CreateGuest(new Guest() {Address = "as333333333d", Guest_No = 122, Name = "asd"});
             //DeleteGuest(2);
+            UpdateGuest(1, new Guest() {Guest_No = 1, Address = "hhhhh", Name = "tesssst"});
 
 
         }
@@ -39,7 +40,7 @@ namespace FrontendApp
             {
                 client.BaseAddress = new Uri(serverUrl);
                 client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("applicatione/json"));
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 var listofguests = new List<Guest>();
 
@@ -67,7 +68,7 @@ namespace FrontendApp
             }
         }
 
-        public void CreateGuest(Guest nyGuest)
+        public async Task CreateGuest(Guest nyGuest)
         {
             using (var client = new HttpClient(handler))
             {
@@ -81,8 +82,9 @@ namespace FrontendApp
 
                     //StringContent content = new StringContent(JsonGuest, Encoding.UTF8, "application/json");
 
-                    var response = client.PostAsJsonAsync("api/Guests", nyGuest).Result;
+                    var response = await client.PostAsJsonAsync("api/Guests", nyGuest);
                     if (response.IsSuccessStatusCode)
+
                     {
 
                     }
@@ -95,17 +97,42 @@ namespace FrontendApp
             }
         }
 
-        //public void DeleteGuest(int id)
+        public async Task UpdateGuest(int id, Guest nyGuest)
+        {
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                try
+                {
+                    var response = await client.PutAsJsonAsync("api/Guests/"+id, nyGuest);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        
+                    }
+
+                }
+                catch (Exception)
+                {
+                    
+                    throw;
+                }
+            }
+        }
+
+        //public async Task DeleteGuest(int id)
         //{
         //    using (var client = new HttpClient(handler))
         //    {
         //        client.BaseAddress = new Uri(serverUrl);
         //        client.DefaultRequestHeaders.Clear();
-        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("applicatione/json"));
+        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
         //        try
         //        {
-        //            var response = client.DeleteAsync("api/Guests/2").Result;
+        //            var response = await client.DeleteAsync("api/Guests/2");
         //            if (response.IsSuccessStatusCode)
         //            {
 
