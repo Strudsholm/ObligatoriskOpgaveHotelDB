@@ -196,3 +196,14 @@ C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\View\MainPage.xbf
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\View\RedigerGuestUI.xbf
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\FrontendApp.csprojResolveAssemblyReference.cache
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\View\OpretGuestUI.xbf
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\View\OpretGuestUI.g.i.cs
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\View\OpretGuestUI.g.cs
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\View\OpretGuestUI.xaml
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\View\OpretGuestUI.xbf
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\System.Net.Http.Formatting.dll
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\System.Net.Http.Extensions.dll
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\System.Net.Http.Primitives.dll
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\System.Net.Http.Formatting\en-US\System.Net.Http.Properties.CommonWebApiResources.resw
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\System.Net.Http.Formatting\en-US\System.Net.Http.Properties.Resources.resw
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\FrontendApp.csproj.GenerateResource.Cache

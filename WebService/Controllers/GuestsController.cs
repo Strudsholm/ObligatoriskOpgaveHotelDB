@@ -73,15 +73,14 @@ namespace WebService.Controllers
 
         // POST: api/Guests
         [ResponseType(typeof(Guest))]
-        public IHttpActionResult PostGuest(String guest)
+        public IHttpActionResult PostGuest(Guest guest)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            Guest guestd = JsonConvert.DeserializeObject<Guest>(guest);
-            db.Guest.Add(guestd);
+            db.Guest.Add(guest);
 
             try
             {
@@ -89,7 +88,7 @@ namespace WebService.Controllers
             }
             catch (DbUpdateException)
             {
-                if (GuestExists(guestd.Guest_No))
+                if (GuestExists(guest.Guest_No))
                 {
                     return Conflict();
                 }
@@ -99,7 +98,7 @@ namespace WebService.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = guestd.Guest_No }, guestd);
+            return CreatedAtRoute("DefaultApi", new { id = guest.Guest_No }, guest);
         }
 
         // DELETE: api/Guests/5

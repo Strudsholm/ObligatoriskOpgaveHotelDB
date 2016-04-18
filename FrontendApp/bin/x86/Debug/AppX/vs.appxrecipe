@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>89787357-d8e3-415e-b327-7fad15fd6cf3</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>0F3EBACB37C4BA455CF2BA49E7EE28C29C5C6BDBB816DD9F29683E1CA492350E</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>5F3AB17BAC8C7DB82BF9BD2F17047CF08D640A579371786D15504388B8B02A0D</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>89787357-d8e3-415e-b327-7fad15fd6cf3_1.0.0.0_x86__w73ezkybc2r3j</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>89787357-d8e3-415e-b327-7fad15fd6cf3_w73ezkybc2r3j!App</RegisteredUserModeAppID>
     <RegisteredPackageID>89787357-d8e3-415e-b327-7fad15fd6cf3</RegisteredPackageID>
@@ -22,17 +22,29 @@
     <AppXManifest Include="C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-04-16T22:09:02.817</Modified>
+      <Modified>2016-04-18T10:40:00.487</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\FrontendApp.exe">
       <PackagePath>entrypoint\FrontendApp.exe</PackagePath>
-      <Modified>2016-04-16T22:09:02.547</Modified>
+      <Modified>2016-04-18T10:39:59.248</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joachim\.nuget\packages\Microsoft.AspNet.WebApi.Client\5.2.3\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.dll">
+      <PackagePath>System.Net.Http.Formatting.dll</PackagePath>
+      <Modified>2015-01-28T03:02:42.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joachim\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
       <Modified>2016-01-27T11:26:37.454</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joachim\.nuget\packages\Microsoft.Net.Http\2.2.22\lib\win8\System.Net.Http.Extensions.dll">
+      <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
+      <Modified>2014-04-29T12:51:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joachim\.nuget\packages\Microsoft.Net.Http\2.2.22\lib\win8\System.Net.Http.Primitives.dll">
+      <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
+      <Modified>2014-04-29T12:51:10.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joachim\.nuget\packages\Microsoft.NETCore.Portable.Compatibility\1.0.0\lib\netcore50\System.ComponentModel.DataAnnotations.dll">
       <PackagePath>System.ComponentModel.DataAnnotations.dll</PackagePath>
@@ -486,7 +498,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\FrontendApp.xr.xml">
       <PackagePath>FrontendApp.xr.xml</PackagePath>
-      <Modified>2016-04-16T16:16:31.345</Modified>
+      <Modified>2016-04-18T10:39:58.976</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -494,11 +506,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-04-16T16:16:32.603</Modified>
+      <Modified>2016-04-18T10:40:00.150</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\Core\FrontendApp.exe">
       <PackagePath>FrontendApp.exe</PackagePath>
-      <Modified>2016-04-16T22:09:02.813</Modified>
+      <Modified>2016-04-18T10:40:00.483</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

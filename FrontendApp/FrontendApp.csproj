@@ -106,6 +106,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\OpretGuestUI.xaml.cs">
+      <DependentUpon>OpretGuestUI.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\RedigerGuestUI.xaml.cs">
       <DependentUpon>RedigerGuestUI.xaml</DependentUpon>
     </Compile>
@@ -135,6 +138,10 @@
     <Page Include="View\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\OpretGuestUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\RedigerGuestUI.xaml">
       <SubType>Designer</SubType>
