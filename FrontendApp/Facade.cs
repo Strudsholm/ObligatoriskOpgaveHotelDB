@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Web.Http;
 using FrontendApp.Model;
+using FrontendApp.ViewModel;
 using Newtonsoft.Json;
 using HttpClient = System.Net.Http.HttpClient;
 using UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding;
@@ -25,9 +26,9 @@ namespace FrontendApp
             handler = new HttpClientHandler();
             serverUrl = "http://localhost:24061/";
             handler.UseDefaultCredentials = true;
-            CreateGuest(new Guest() {Address = "as333333333d", Guest_No = 122, Name = "asd"});
-            DeleteGuest(2);
-            UpdateGuest(1, new Guest() {Guest_No = 1, Address = "hhhhh", Name = "tesssst"});
+            //CreateGuest(new Guest() {Name = "xdtrolllll", Guest_No = 31, Address = "jn"});
+            //DeleteGuest(2);
+            //UpdateGuest(1, new Guest() {Guest_No = 1, Address = "hhhhh", Name = "tesssst"});
 
 
         }
@@ -67,6 +68,39 @@ namespace FrontendApp
 
             }
         }
+        public Guest GetMetode1(int id)
+        {
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                var Guestinfo = new Guest();
+
+                try
+                {
+                    var response = client.GetAsync("api/Guests/"+id).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+
+                        var GuestJson = response.Content.ReadAsStringAsync().Result;
+
+                        Guestinfo = JsonConvert.DeserializeObject<Guest>(GuestJson);
+
+                        return Guestinfo;
+
+                    }
+                    return Guestinfo;
+                }
+                catch (Exception)
+                {
+                    return Guestinfo;
+
+                }
+
+            }
+        }
 
         public async Task CreateGuest(Guest nyGuest)
         {
@@ -81,6 +115,7 @@ namespace FrontendApp
                     //var JsonGuest = JsonConvert.SerializeObject(nyGuest);
 
                     //StringContent content = new StringContent(JsonGuest, Encoding.UTF8, "application/json");
+
 
                     var response = await client.PostAsJsonAsync("api/Guests", nyGuest);
                     if (response.IsSuccessStatusCode)
@@ -132,7 +167,7 @@ namespace FrontendApp
 
                 try
                 {
-                    var response = await client.DeleteAsync("api/Guests/2");
+                    var response = await client.DeleteAsync("api/Guests/"+id);
                     if (response.IsSuccessStatusCode)
                     {
 

@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
   <Roots.PropertyPathNames>
-    <RootPropertyPathName Name="UpdateCommand" />
-    <RootPropertyPathName Name="HentCommand" />
+    <RootPropertyPathName Name="GemCommand" />
     <RootPropertyPathName Name="GuestName" />
     <RootPropertyPathName Name="GuestAddress" />
     <RootPropertyPathName Name="GuestNo" />
+    <RootPropertyPathName Name="DeleteCommand" />
+    <RootPropertyPathName Name="UpdateCommand" />
+    <RootPropertyPathName Name="HentCommand" />
     <RootPropertyPathName Name="GuestsOC" />
     <RootPropertyPathName Name="SelectedIndex" />
   </Roots.PropertyPathNames>
@@ -23,6 +25,7 @@
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="FrontendApp.MainPage" />
+    <RootType FullName="FrontendApp.ViewModel.GæstVM" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Height" />
@@ -41,15 +44,6 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Width" />
     </RootType>
-    <RootType FullName="FrontendApp.View.OpretGuestUI" />
-    <RootType FullName="FrontendApp.ViewModel.GæstVM" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="ItemsSource" />
-      <RootProperty Name="SelectedIndex" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
       <RootProperty Name="HorizontalAlignment" />
@@ -66,12 +60,27 @@
       <RootProperty Name="EventName" />
       <RootProperty Name="Actions" />
     </RootType>
+    <RootType FullName="Microsoft.Xaml.Interactions.Core.NavigateToPageAction">
+      <RootProperty Name="TargetPage" />
+    </RootType>
     <RootType FullName="Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
       <RootProperty Name="Command" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Mode" />
       <RootProperty Name="UpdateSourceTrigger" />
+    </RootType>
+    <RootType FullName="FrontendApp.View.OpretGuestUI" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="SelectedIndex" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Interactions.Core.CallMethodAction">
+      <RootProperty Name="TargetObject" />
+      <RootProperty Name="MethodName" />
     </RootType>
     <RootType FullName="FrontendApp.RedigerGuestUI" />
   </Roots.RootTypes>

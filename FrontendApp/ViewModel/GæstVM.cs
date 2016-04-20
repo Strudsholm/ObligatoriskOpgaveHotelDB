@@ -27,29 +27,48 @@ namespace FrontendApp.ViewModel
         public string GuestName { get; set; }
         public string GuestAddress { get; set; }
         public int GuestNo { get; set; }
+        public Facade Facade { get; set; }
 
         public GæstVM()
         {
+            Facade = new Facade();
             GuestsOC = new ObservableCollection<Guest>();
             foreach (var g in GuestListSingleton.Instance.Guests)
             {
                 GuestsOC.Add(g);
             }
-            //GemCommand = new RelayCommand();
+            GemCommand = new RelayCommand(GemGuest);
             HentCommand = new RelayCommand(Hentinfo);
             UpdateCommand = new RelayCommand(UpdateInfo);
-            //DeleteCommand = new RelayCommand();
+            DeleteCommand = new RelayCommand(DeleteGuest);
+                      
+        }
 
+        public void Opdater()
+        {
+            Facade.GetMetode();
+        }
+
+        public void GemGuest()
+        {
+            Guest test = new Guest();
+
+            test.Guest_No = GuestNo;
+            test.Name = GuestName;
+            test.Address = GuestAddress;
+
+            Facade.CreateGuest(test);
         }
 
         public void Hentinfo()
         {
-            Guest xd = new Guest();
-            xd = GuestListSingleton.Instance.Guests[SelectedIndex];
-            GuestName = xd.Name;
-            GuestAddress = xd.Address;
-            GuestNo = xd.Guest_No;
 
+            Guest test = GuestListSingleton.Instance.Guests[SelectedIndex];
+            Guest troll = Facade.GetMetode1(test.Guest_No);
+
+            GuestName = troll.Name;
+            GuestAddress = troll.Address;
+            GuestNo = troll.Guest_No;
             OnPropertyChanged(string.Empty);
         }
 
@@ -61,13 +80,18 @@ namespace FrontendApp.ViewModel
             xd.Address = GuestAddress;
             //xd.Guest_No = GuestNo;
 
+            Facade.UpdateGuest(xd.Guest_No, xd);
+
             OnPropertyChanged(string.Empty);
 
         }
 
-        public void DeleteGuest(int )
+        public void DeleteGuest()
         {
-            //GuestListSingleton.Instance.Guests[SelectedIndex];
+            Guest test = GuestListSingleton.Instance.Guests[SelectedIndex];
+
+            Facade.DeleteGuest(test.Guest_No);
+            
         }
 
 
