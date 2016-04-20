@@ -207,3 +207,7 @@ C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\System.Net.Http.Formatting\en-US\System.Net.Http.Properties.CommonWebApiResources.resw
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\System.Net.Http.Formatting\en-US\System.Net.Http.Properties.Resources.resw
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\FrontendApp.csproj.GenerateResource.Cache
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\Microsoft.Xaml.Interactions.dll
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\Microsoft.Xaml.Interactivity.dll
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\Microsoft.Xaml.Interactions.pri.xml
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\Microsoft.Xaml.Interactivity.pri.xml

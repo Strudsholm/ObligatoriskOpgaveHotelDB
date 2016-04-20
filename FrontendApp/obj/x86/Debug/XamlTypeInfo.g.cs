@@ -132,7 +132,7 @@ namespace FrontendApp.FrontendApp_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[17];
+            _typeNameTable = new string[28];
             _typeNameTable[0] = "FrontendApp.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -149,9 +149,20 @@ namespace FrontendApp.FrontendApp_XamlTypeInfo
             _typeNameTable[13] = "System.DateTime";
             _typeNameTable[14] = "System.ValueType";
             _typeNameTable[15] = "FrontendApp.Room";
-            _typeNameTable[16] = "FrontendApp.RedigerGuestUI";
+            _typeNameTable[16] = "Eventmaker.Common.RelayCommand";
+            _typeNameTable[17] = "Microsoft.Xaml.Interactivity.Interaction";
+            _typeNameTable[18] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
+            _typeNameTable[19] = "Windows.UI.Xaml.DependencyObjectCollection";
+            _typeNameTable[20] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[21] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
+            _typeNameTable[22] = "Microsoft.Xaml.Interactivity.Behavior";
+            _typeNameTable[23] = "Microsoft.Xaml.Interactivity.ActionCollection";
+            _typeNameTable[24] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
+            _typeNameTable[25] = "System.Windows.Input.ICommand";
+            _typeNameTable[26] = "Windows.UI.Xaml.Data.IValueConverter";
+            _typeNameTable[27] = "FrontendApp.RedigerGuestUI";
 
-            _typeTable = new global::System.Type[17];
+            _typeTable = new global::System.Type[28];
             _typeTable[0] = typeof(global::FrontendApp.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -168,7 +179,18 @@ namespace FrontendApp.FrontendApp_XamlTypeInfo
             _typeTable[13] = typeof(global::System.DateTime);
             _typeTable[14] = typeof(global::System.ValueType);
             _typeTable[15] = typeof(global::FrontendApp.Room);
-            _typeTable[16] = typeof(global::FrontendApp.RedigerGuestUI);
+            _typeTable[16] = typeof(global::Eventmaker.Common.RelayCommand);
+            _typeTable[17] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
+            _typeTable[18] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
+            _typeTable[19] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
+            _typeTable[20] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[21] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
+            _typeTable[22] = typeof(global::Microsoft.Xaml.Interactivity.Behavior);
+            _typeTable[23] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
+            _typeTable[24] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
+            _typeTable[25] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[26] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
+            _typeTable[27] = typeof(global::FrontendApp.RedigerGuestUI);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -211,7 +233,11 @@ namespace FrontendApp.FrontendApp_XamlTypeInfo
         private object Activate_8_Guest() { return new global::FrontendApp.Guest(); }
         private object Activate_12_Booking() { return new global::FrontendApp.Booking(); }
         private object Activate_15_Room() { return new global::FrontendApp.Room(); }
-        private object Activate_16_RedigerGuestUI() { return new global::FrontendApp.RedigerGuestUI(); }
+        private object Activate_18_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
+        private object Activate_21_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
+        private object Activate_23_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
+        private object Activate_24_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
+        private object Activate_27_RedigerGuestUI() { return new global::FrontendApp.RedigerGuestUI(); }
         private void VectorAdd_6_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::FrontendApp.Guest>)instance;
@@ -228,6 +254,18 @@ namespace FrontendApp.FrontendApp_XamlTypeInfo
         {
             var collection = (global::System.Collections.Generic.ICollection<global::FrontendApp.Booking>)instance;
             var newItem = (global::FrontendApp.Booking)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_18_BehaviorCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
+            var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_23_ActionCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
+            var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
 
@@ -267,6 +305,14 @@ namespace FrontendApp.FrontendApp_XamlTypeInfo
                 userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_4_GæstVM;
                 userType.AddMemberName("GuestsOC");
+                userType.AddMemberName("GemCommand");
+                userType.AddMemberName("DeleteCommand");
+                userType.AddMemberName("UpdateCommand");
+                userType.AddMemberName("HentCommand");
+                userType.AddMemberName("SelectedIndex");
+                userType.AddMemberName("GuestName");
+                userType.AddMemberName("GuestAddress");
+                userType.AddMemberName("GuestNo");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -348,9 +394,81 @@ namespace FrontendApp.FrontendApp_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 16:   //  FrontendApp.RedigerGuestUI
+            case 16:   //  Eventmaker.Common.RelayCommand
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 17:   //  Microsoft.Xaml.Interactivity.Interaction
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("Behaviors");
+                xamlType = userType;
+                break;
+
+            case 18:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
+                userType.CollectionAdd = VectorAdd_18_BehaviorCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 19:   //  Windows.UI.Xaml.DependencyObjectCollection
+                xamlType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 20:   //  Windows.UI.Xaml.DependencyObject
+                xamlType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 21:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior"));
+                userType.Activator = Activate_21_EventTriggerBehavior;
+                userType.SetContentPropertyName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions");
+                userType.AddMemberName("Actions");
+                userType.AddMemberName("EventName");
+                userType.AddMemberName("SourceObject");
+                xamlType = userType;
+                break;
+
+            case 22:   //  Microsoft.Xaml.Interactivity.Behavior
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.AddMemberName("AssociatedObject");
+                xamlType = userType;
+                break;
+
+            case 23:   //  Microsoft.Xaml.Interactivity.ActionCollection
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
+                userType.CollectionAdd = VectorAdd_23_ActionCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 24:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_24_InvokeCommandAction;
+                userType.AddMemberName("Command");
+                userType.AddMemberName("CommandParameter");
+                userType.AddMemberName("InputConverter");
+                userType.AddMemberName("InputConverterParameter");
+                userType.AddMemberName("InputConverterLanguage");
+                xamlType = userType;
+                break;
+
+            case 25:   //  System.Windows.Input.ICommand
+                userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 26:   //  Windows.UI.Xaml.Data.IValueConverter
+                xamlType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 27:   //  FrontendApp.RedigerGuestUI
                 userType = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_16_RedigerGuestUI;
+                userType.Activator = Activate_27_RedigerGuestUI;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -489,6 +607,174 @@ namespace FrontendApp.FrontendApp_XamlTypeInfo
             var that = (global::FrontendApp.Booking)instance;
             that.Guest = (global::FrontendApp.Guest)Value;
         }
+        private object get_13_GæstVM_GemCommand(object instance)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            return that.GemCommand;
+        }
+        private void set_13_GæstVM_GemCommand(object instance, object Value)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            that.GemCommand = (global::Eventmaker.Common.RelayCommand)Value;
+        }
+        private object get_14_GæstVM_DeleteCommand(object instance)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            return that.DeleteCommand;
+        }
+        private void set_14_GæstVM_DeleteCommand(object instance, object Value)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            that.DeleteCommand = (global::Eventmaker.Common.RelayCommand)Value;
+        }
+        private object get_15_GæstVM_UpdateCommand(object instance)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            return that.UpdateCommand;
+        }
+        private void set_15_GæstVM_UpdateCommand(object instance, object Value)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            that.UpdateCommand = (global::Eventmaker.Common.RelayCommand)Value;
+        }
+        private object get_16_GæstVM_HentCommand(object instance)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            return that.HentCommand;
+        }
+        private void set_16_GæstVM_HentCommand(object instance, object Value)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            that.HentCommand = (global::Eventmaker.Common.RelayCommand)Value;
+        }
+        private object get_17_GæstVM_SelectedIndex(object instance)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            return that.SelectedIndex;
+        }
+        private void set_17_GæstVM_SelectedIndex(object instance, object Value)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            that.SelectedIndex = (global::System.Int32)Value;
+        }
+        private object get_18_GæstVM_GuestName(object instance)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            return that.GuestName;
+        }
+        private void set_18_GæstVM_GuestName(object instance, object Value)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            that.GuestName = (global::System.String)Value;
+        }
+        private object get_19_GæstVM_GuestAddress(object instance)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            return that.GuestAddress;
+        }
+        private void set_19_GæstVM_GuestAddress(object instance, object Value)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            that.GuestAddress = (global::System.String)Value;
+        }
+        private object get_20_GæstVM_GuestNo(object instance)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            return that.GuestNo;
+        }
+        private void set_20_GæstVM_GuestNo(object instance, object Value)
+        {
+            var that = (global::FrontendApp.ViewModel.GæstVM)instance;
+            that.GuestNo = (global::System.Int32)Value;
+        }
+        private object get_21_Interaction_Behaviors(object instance)
+        {
+            return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_21_Interaction_Behaviors(object instance, object Value)
+        {
+            global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
+        }
+        private object get_22_EventTriggerBehavior_Actions(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.Actions;
+        }
+        private object get_23_EventTriggerBehavior_EventName(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.EventName;
+        }
+        private void set_23_EventTriggerBehavior_EventName(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            that.EventName = (global::System.String)Value;
+        }
+        private object get_24_EventTriggerBehavior_SourceObject(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.SourceObject;
+        }
+        private void set_24_EventTriggerBehavior_SourceObject(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            that.SourceObject = (global::System.Object)Value;
+        }
+        private object get_25_Behavior_AssociatedObject(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactivity.Behavior)instance;
+            return that.AssociatedObject;
+        }
+        private object get_26_InvokeCommandAction_Command(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.Command;
+        }
+        private void set_26_InvokeCommandAction_Command(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.Command = (global::System.Windows.Input.ICommand)Value;
+        }
+        private object get_27_InvokeCommandAction_CommandParameter(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.CommandParameter;
+        }
+        private void set_27_InvokeCommandAction_CommandParameter(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.CommandParameter = (global::System.Object)Value;
+        }
+        private object get_28_InvokeCommandAction_InputConverter(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.InputConverter;
+        }
+        private void set_28_InvokeCommandAction_InputConverter(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.InputConverter = (global::Windows.UI.Xaml.Data.IValueConverter)Value;
+        }
+        private object get_29_InvokeCommandAction_InputConverterParameter(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.InputConverterParameter;
+        }
+        private void set_29_InvokeCommandAction_InputConverterParameter(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.InputConverterParameter = (global::System.Object)Value;
+        }
+        private object get_30_InvokeCommandAction_InputConverterLanguage(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.InputConverterLanguage;
+        }
+        private void set_30_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.InputConverterLanguage = (global::System.String)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -574,6 +860,124 @@ namespace FrontendApp.FrontendApp_XamlTypeInfo
                 xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Guest", "FrontendApp.Guest");
                 xamlMember.Getter = get_12_Booking_Guest;
                 xamlMember.Setter = set_12_Booking_Guest;
+                break;
+            case "FrontendApp.ViewModel.GæstVM.GemCommand":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.ViewModel.GæstVM");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "GemCommand", "Eventmaker.Common.RelayCommand");
+                xamlMember.Getter = get_13_GæstVM_GemCommand;
+                xamlMember.Setter = set_13_GæstVM_GemCommand;
+                break;
+            case "FrontendApp.ViewModel.GæstVM.DeleteCommand":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.ViewModel.GæstVM");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "DeleteCommand", "Eventmaker.Common.RelayCommand");
+                xamlMember.Getter = get_14_GæstVM_DeleteCommand;
+                xamlMember.Setter = set_14_GæstVM_DeleteCommand;
+                break;
+            case "FrontendApp.ViewModel.GæstVM.UpdateCommand":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.ViewModel.GæstVM");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "UpdateCommand", "Eventmaker.Common.RelayCommand");
+                xamlMember.Getter = get_15_GæstVM_UpdateCommand;
+                xamlMember.Setter = set_15_GæstVM_UpdateCommand;
+                break;
+            case "FrontendApp.ViewModel.GæstVM.HentCommand":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.ViewModel.GæstVM");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "HentCommand", "Eventmaker.Common.RelayCommand");
+                xamlMember.Getter = get_16_GæstVM_HentCommand;
+                xamlMember.Setter = set_16_GæstVM_HentCommand;
+                break;
+            case "FrontendApp.ViewModel.GæstVM.SelectedIndex":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.ViewModel.GæstVM");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "SelectedIndex", "Int32");
+                xamlMember.Getter = get_17_GæstVM_SelectedIndex;
+                xamlMember.Setter = set_17_GæstVM_SelectedIndex;
+                break;
+            case "FrontendApp.ViewModel.GæstVM.GuestName":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.ViewModel.GæstVM");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "GuestName", "String");
+                xamlMember.Getter = get_18_GæstVM_GuestName;
+                xamlMember.Setter = set_18_GæstVM_GuestName;
+                break;
+            case "FrontendApp.ViewModel.GæstVM.GuestAddress":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.ViewModel.GæstVM");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "GuestAddress", "String");
+                xamlMember.Getter = get_19_GæstVM_GuestAddress;
+                xamlMember.Setter = set_19_GæstVM_GuestAddress;
+                break;
+            case "FrontendApp.ViewModel.GæstVM.GuestNo":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FrontendApp.ViewModel.GæstVM");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "GuestNo", "Int32");
+                xamlMember.Getter = get_20_GæstVM_GuestNo;
+                xamlMember.Setter = set_20_GæstVM_GuestNo;
+                break;
+            case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Interaction");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
+                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
+                xamlMember.SetIsAttachable();
+                xamlMember.Getter = get_21_Interaction_Behaviors;
+                xamlMember.Setter = set_21_Interaction_Behaviors;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_22_EventTriggerBehavior_Actions;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "EventName", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_23_EventTriggerBehavior_EventName;
+                xamlMember.Setter = set_23_EventTriggerBehavior_EventName;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "SourceObject", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_24_EventTriggerBehavior_SourceObject;
+                xamlMember.Setter = set_24_EventTriggerBehavior_SourceObject;
+                break;
+            case "Microsoft.Xaml.Interactivity.Behavior.AssociatedObject":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
+                xamlMember.Getter = get_25_Behavior_AssociatedObject;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "Command", "System.Windows.Input.ICommand");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_26_InvokeCommandAction_Command;
+                xamlMember.Setter = set_26_InvokeCommandAction_Command;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "CommandParameter", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_27_InvokeCommandAction_CommandParameter;
+                xamlMember.Setter = set_27_InvokeCommandAction_CommandParameter;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "InputConverter", "Windows.UI.Xaml.Data.IValueConverter");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_28_InvokeCommandAction_InputConverter;
+                xamlMember.Setter = set_28_InvokeCommandAction_InputConverter;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "InputConverterParameter", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_29_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Setter = set_29_InvokeCommandAction_InputConverterParameter;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage":
+                userType = (global::FrontendApp.FrontendApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::FrontendApp.FrontendApp_XamlTypeInfo.XamlMember(this, "InputConverterLanguage", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_30_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Setter = set_30_InvokeCommandAction_InputConverterLanguage;
                 break;
             }
             return xamlMember;

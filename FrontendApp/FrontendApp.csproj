@@ -101,6 +101,9 @@
     <Compile Include="Guest.cs" />
     <Compile Include="Hotel.cs" />
     <Compile Include="Model\GuestListSingleton.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="RelayArgCommand.cs" />
+    <Compile Include="RelayCommand.cs" />
     <Compile Include="ViewModel\GæstVM.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
