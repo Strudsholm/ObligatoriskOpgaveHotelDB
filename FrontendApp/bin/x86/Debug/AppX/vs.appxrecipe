@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-04-20T12:16:22.122</Modified>
+      <Modified>2016-04-20T23:16:06.094</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\FrontendApp.exe">
       <PackagePath>entrypoint\FrontendApp.exe</PackagePath>
-      <Modified>2016-04-20T12:16:21.687</Modified>
+      <Modified>2016-04-20T23:16:05.339</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joachim\.nuget\packages\Microsoft.AspNet.WebApi.Client\5.2.3\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.dll">
       <PackagePath>System.Net.Http.Formatting.dll</PackagePath>
@@ -514,11 +514,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-04-20T12:13:42.873</Modified>
+      <Modified>2016-04-20T22:39:04.944</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\Core\FrontendApp.exe">
       <PackagePath>FrontendApp.exe</PackagePath>
-      <Modified>2016-04-20T12:16:22.119</Modified>
+      <Modified>2016-04-20T23:16:06.086</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

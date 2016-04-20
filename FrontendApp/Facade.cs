@@ -29,7 +29,7 @@ namespace FrontendApp
             //CreateGuest(new Guest() {Name = "xdtrolllll", Guest_No = 31, Address = "jn"});
             //DeleteGuest(2);
             //UpdateGuest(1, new Guest() {Guest_No = 1, Address = "hhhhh", Name = "tesssst"});
-
+            
 
         }
 
@@ -76,7 +76,8 @@ namespace FrontendApp
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                var Guestinfo = new Guest();
+                var guestinfo = new Guest();
+                Guest fejlgæst = new Guest() { Guest_No = 119, Name = "fejl", Address = "fejl" };
 
                 try
                 {
@@ -86,16 +87,16 @@ namespace FrontendApp
 
                         var GuestJson = response.Content.ReadAsStringAsync().Result;
 
-                        Guestinfo = JsonConvert.DeserializeObject<Guest>(GuestJson);
+                        guestinfo = JsonConvert.DeserializeObject<Guest>(GuestJson);
 
-                        return Guestinfo;
+                        return guestinfo;
 
                     }
-                    return Guestinfo;
+                    return fejlgæst;
                 }
                 catch (Exception)
                 {
-                    return Guestinfo;
+                    return fejlgæst;
 
                 }
 

@@ -15,7 +15,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ListView x:Name="listView" HorizontalAlignment="Left" Margin="0,77,0,183" Width="386" ItemsSource="{Binding GuestsOC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding SelectedIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-        <Button x:Name="button" Content="Opdater View" HorizontalAlignment="Right" Height="68" Margin="0,557,1060,0" VerticalAlignment="Top" Width="154">
+        <Button x:Name="button" Content="Opdater View" HorizontalAlignment="Right" Height="68" Margin="0,642,1060,0" VerticalAlignment="Top" Width="154">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="Click">
                     <Core:CallMethodAction TargetObject="{Binding Mode=OneWay}" MethodName="Opdater"/>

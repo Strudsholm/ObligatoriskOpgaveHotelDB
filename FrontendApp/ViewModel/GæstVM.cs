@@ -14,7 +14,6 @@ namespace FrontendApp.ViewModel
 {
     public class GæstVM : INotifyPropertyChanged
     {
-        //public GuestListSingleton GuestListSingleton { get; set; }
         public ObservableCollection<Guest> GuestsOC { get; set; }
 
         public RelayCommand GemCommand { get; set; }
@@ -62,9 +61,7 @@ namespace FrontendApp.ViewModel
 
         public void Hentinfo()
         {
-
-            Guest test = GuestListSingleton.Instance.Guests[SelectedIndex];
-            Guest troll = Facade.GetMetode1(test.Guest_No);
+            Guest troll = GuestsOC[SelectedIndex];
 
             GuestName = troll.Name;
             GuestAddress = troll.Address;
@@ -86,12 +83,14 @@ namespace FrontendApp.ViewModel
 
         }
 
+        
         public void DeleteGuest()
         {
-            Guest test = GuestListSingleton.Instance.Guests[SelectedIndex];
-
+            Guest test = GuestsOC[SelectedIndex];
             Facade.DeleteGuest(test.Guest_No);
-            
+
+            GuestsOC.RemoveAt(SelectedIndex);
+
         }
 
 
