@@ -99,6 +99,7 @@
     <Compile Include="Booking.cs" />
     <Compile Include="Facade.cs" />
     <Compile Include="Guest.cs" />
+    <Compile Include="GuestAndBookings.cs" />
     <Compile Include="Hotel.cs" />
     <Compile Include="Model\GuestListSingleton.cs" />
     <Compile Include="Properties\Annotations.cs" />
@@ -116,6 +117,9 @@
       <DependentUpon>RedigerGuestUI.xaml</DependentUpon>
     </Compile>
     <Compile Include="Room.cs" />
+    <Compile Include="View\sqlViewUI.xaml.cs">
+      <DependentUpon>sqlViewUI.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -147,6 +151,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\RedigerGuestUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\sqlViewUI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

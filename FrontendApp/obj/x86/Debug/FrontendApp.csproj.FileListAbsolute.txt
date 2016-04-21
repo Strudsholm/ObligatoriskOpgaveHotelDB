@@ -195,7 +195,6 @@ C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\View\RedigerGuestUI.xaml
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\View\MainPage.xbf
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\View\RedigerGuestUI.xbf
-C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\FrontendApp.csprojResolveAssemblyReference.cache
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\View\OpretGuestUI.xbf
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\View\OpretGuestUI.g.i.cs
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\View\OpretGuestUI.g.cs
@@ -211,3 +210,9 @@ C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\Microsoft.Xaml.Interactivity.dll
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\Microsoft.Xaml.Interactions.pri.xml
 C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\Microsoft.Xaml.Interactivity.pri.xml
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\bin\x86\Debug\View\sqlViewUI.xbf
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\View\sqlViewUI.g.i.cs
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\View\sqlViewUI.g.cs
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\View\sqlViewUI.xaml
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\View\sqlViewUI.xbf
+C:\Users\Joachim\Desktop\Skole\Programmering\Repository1\FrontendApp\FrontendApp\obj\x86\Debug\FrontendApp.csprojResolveAssemblyReference.cache

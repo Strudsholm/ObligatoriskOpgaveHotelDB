@@ -10,6 +10,7 @@
     <RootPropertyPathName Name="HentCommand" />
     <RootPropertyPathName Name="GuestsOC" />
     <RootPropertyPathName Name="SelectedIndex" />
+    <RootPropertyPathName Name="GuestAndBookingss" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -77,11 +78,11 @@
       <RootProperty Name="Width" />
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="SelectedIndex" />
-    </RootType>
-    <RootType FullName="Microsoft.Xaml.Interactions.Core.CallMethodAction">
-      <RootProperty Name="TargetObject" />
-      <RootProperty Name="MethodName" />
+      <RootProperty Name="IsSynchronizedWithCurrentItem" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="FrontendApp.RedigerGuestUI" />
+    <RootType FullName="FrontendApp.View.sqlViewUI" />
   </Roots.RootTypes>
 </Roots>

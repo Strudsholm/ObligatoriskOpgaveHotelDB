@@ -33,6 +33,36 @@ namespace FrontendApp
 
         }
 
+        public List<GuestAndBookings> ViewGetMetode()
+        {
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                var view = new List<GuestAndBookings>();
+
+                try
+                {
+                    var response = client.GetAsync("api/GuestAndBookings").Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var ViewJson = response.Content.ReadAsStringAsync().Result;
+
+                        view = JsonConvert.DeserializeObject<List<GuestAndBookings>>(ViewJson);
+                        return view;
+                    }
+                    return null;
+                }
+                catch (Exception)
+                {
+                    return null;
+                    throw;
+                }
+            }
+        }
+
         //Http Get
         //Sætter min singleton = gæste listen via webservice
         public void GetMetode()

@@ -1,0 +1,63 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FrontendApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:FrontendApp.ViewModel"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    x:Class="FrontendApp.RedigerGuestUI"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <ViewModel:GæstVM/>
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListView x:ConnectionId='1' x:Name="listView" HorizontalAlignment="Left" Margin="0,77,0,183" Width="386" ItemsSource="{Binding GuestsOC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding SelectedIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSynchronizedWithCurrentItem="False"/>
+        <TextBox x:ConnectionId='2' x:Name="textBox" HorizontalAlignment="Left" Height="28" Margin="420,157,0,0" TextWrapping="Wrap" Text="{Binding GuestNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="124"/>
+        <TextBox x:ConnectionId='3' x:Name="textBox_Copy" HorizontalAlignment="Right" Height="28" Margin="0,317,460,0" TextWrapping="Wrap" Text="{Binding GuestAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="124"/>
+        <TextBox x:ConnectionId='4' x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="28" Margin="420,317,0,0" TextWrapping="Wrap" Text="{Binding GuestName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="124"/>
+        <TextBlock x:ConnectionId='5' x:Name="textBlock" HorizontalAlignment="Left" Height="16" Margin="420,141,0,0" TextWrapping="Wrap" Text="Guest No." VerticalAlignment="Top" Width="124"/>
+        <TextBlock x:ConnectionId='6' x:Name="textBlock_Copy1" HorizontalAlignment="Right" Height="16" Margin="0,301,460,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" Width="124"/>
+        <TextBlock x:ConnectionId='7' x:Name="textBlock_Copy2" HorizontalAlignment="Left" Height="16" Margin="420,301,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="124"/>
+        <Button x:ConnectionId='8' x:Name="button1" Content="Hent Info" Height="68" Margin="420,45,0,0" VerticalAlignment="Top" Width="124">
+            <Interactivity:Interaction.Behaviors>
+                <Core:EventTriggerBehavior EventName="Click">
+                    <Core:InvokeCommandAction Command="{Binding HentCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </Core:EventTriggerBehavior>
+            </Interactivity:Interaction.Behaviors>
+        </Button>
+        <Button x:ConnectionId='9' x:Name="button2" Content="Gem Info" HorizontalAlignment="Right" Height="80" Margin="0,0,460,219" VerticalAlignment="Bottom" Width="124">
+            <Interactivity:Interaction.Behaviors>
+                <Core:EventTriggerBehavior EventName="Click">
+                    <Core:InvokeCommandAction Command="{Binding UpdateCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </Core:EventTriggerBehavior>
+            </Interactivity:Interaction.Behaviors>
+        </Button>
+        <TextBlock x:ConnectionId='10' x:Name="textBlock1" HorizontalAlignment="Left" Height="27" Margin="66,45,0,0" TextWrapping="Wrap" Text="GuestList" VerticalAlignment="Top" Width="266"/>
+        <Button x:ConnectionId='11' x:Name="button3" Content="Delete" Height="66" Margin="369,0,0,97" VerticalAlignment="Bottom" Width="132">
+            <Interactivity:Interaction.Behaviors>
+                <Core:EventTriggerBehavior EventName="Click">
+                    <Core:InvokeCommandAction Command="{Binding DeleteCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </Core:EventTriggerBehavior>
+            </Interactivity:Interaction.Behaviors>
+        </Button>
+        <Button x:ConnectionId='12' x:Name="button4" Content="OpretGuestSide" HorizontalAlignment="Right" Margin="0,257,83,295" VerticalAlignment="Stretch" Width="81">
+            <Interactivity:Interaction.Behaviors>
+                <Core:EventTriggerBehavior EventName="Click">
+                    <Core:NavigateToPageAction TargetPage="FrontendApp.View.OpretGuestUI"/>
+                </Core:EventTriggerBehavior>
+            </Interactivity:Interaction.Behaviors>
+        </Button>
+        <Button x:ConnectionId='13' x:Name="button" Content="SQLViewSide" HorizontalAlignment="Right" Height="68" Margin="0,45,83,0" VerticalAlignment="Top" Width="132">
+            <Interactivity:Interaction.Behaviors>
+                <Core:EventTriggerBehavior EventName="Click">
+                    <Core:NavigateToPageAction TargetPage="FrontendApp.View.sqlViewUI"/>
+                </Core:EventTriggerBehavior>
+            </Interactivity:Interaction.Behaviors>
+        </Button>
+
+    </Grid>
+</Page>
+

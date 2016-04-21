@@ -26,7 +26,7 @@
                 </Core:EventTriggerBehavior>
             </Interactivity:Interaction.Behaviors>
         </Button>
-        <Button x:Name="button1" Content="Button" HorizontalAlignment="Right" Margin="0,226,117,291" VerticalAlignment="Stretch" Width="174">
+        <Button x:Name="button1" Content="Tilbage" HorizontalAlignment="Right" Margin="0,226,117,291" VerticalAlignment="Stretch" Width="174">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="Click">
                     <Core:NavigateToPageAction TargetPage="FrontendApp.RedigerGuestUI"/>
